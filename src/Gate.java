@@ -84,8 +84,9 @@ public class Gate {
 		return null;
 	}
 	
-	public static Double dotProd(int[] vector, Complex[] rightSide){
-		return vector[0]*rightSide[0].getRe() + vector[1]*rightSide[1].getRe();
+	public static Complex dotProd(int[] vector, Complex[] rightSide){
+		return new Complex(vector[0]*rightSide[0].getRe() + vector[1]*rightSide[1].getRe(), 
+				vector[0]*rightSide[0].getIm() + vector[1]*rightSide[1].getIm());
 	}
 	
 }

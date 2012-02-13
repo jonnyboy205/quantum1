@@ -19,7 +19,7 @@ public class Exercise3Tester {
 		
 		Exercise3 e = new Exercise3(j,k,m);
 		System.out.println("The probability to measure j=2 in a k=2 qubit system " +
-				"on input m=" + m + "is: " + e.calculateProb());
+				"on input m=" + m + " is: " + e.calculateProb());
 	}
 
 }

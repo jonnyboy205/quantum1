@@ -14,6 +14,7 @@ public class Exercise3 {
 	
 	public double calculateProb(){
 		double ret = 1;
+		Complex comFirst = new Complex(1, 0);
 		
 		ArrayList<int[]> leftSide = doLeft();
 		ArrayList<Gate> middle = doMiddle();
@@ -23,13 +24,16 @@ public class Exercise3 {
 		
 		ArrayList<Complex[]> middleRight = new ArrayList<Complex[]>();
 		for (int i=0; i<k; i++){
-			Complex[] element = (middle.get(i)).ket(rightSideString.charAt(i));
+			Complex[] element = (middle.get(i)).ket(Character.digit(rightSideString.charAt(i), 10));
 			middleRight.add(element);
 		}
 		
+		
 		for (int y=0; y<k; y++){
-			ret = ret * Gate.dotProd(leftSide.get(y), middleRight.get(y));
+			comFirst = comFirst.mul(Gate.dotProd(leftSide.get(y), middleRight.get(y)));
 		}
+		
+		ret = comFirst.getNorm();
 		
 		return ret;
 	}
