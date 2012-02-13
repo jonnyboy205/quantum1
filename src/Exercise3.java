@@ -12,8 +12,8 @@ public class Exercise3 {
 		this.m = m;
 	}
 	
-	public int calculateProb(){
-		int ret = 0;
+	public double calculateProb(){
+		double ret = 0;
 		
 		ArrayList<int[]> leftSide = doLeft();
 		ArrayList<Gate> middle = doMiddle();
@@ -23,7 +23,11 @@ public class Exercise3 {
 		ArrayList<Complex[]> middleRight = new ArrayList<Complex[]>();
 		for (int i=0; i<k; i++){
 			Complex[] element = (middle.get(i)).ket(rightSideString.charAt(i));
-			middleRight.set(i, element);
+			middleRight.add(element);
+		}
+		
+		for (int y=0; y<k; y++){
+			ret = ret * Gate.dotProd(leftSide.get(y), middleRight.get(y));
 		}
 		
 		return ret;
@@ -52,7 +56,7 @@ public class Exercise3 {
 		//create middle of prob expression
 		ArrayList<Gate> middle = new ArrayList<Gate>(k);
 		for (int x=0; x<k; x++){
-			middle.set(x, new Gate(x));
+			middle.add(new Gate(x));
 		}
 		
 		return middle;
@@ -67,11 +71,11 @@ public class Exercise3 {
 		for (int i=0; i<k; i++){
 			if (leftSideString.charAt(i)=='0'){
 				int[] temp = {1, 0};
-				leftside.set(i, temp);
+				leftside.add(temp);
 			}
 			else{ // leftSideString.charAt(0) == '1'
 				int[] temp = {0, 1};
-				leftside.set(i, temp);
+				leftside.add(temp);
 			}
 		}
 		

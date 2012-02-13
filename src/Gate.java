@@ -75,7 +75,7 @@ public class Gate {
 		return null;
 	}
 	
-	public Double dotProd(int[] vector, Complex[] rightSide){
+	public static Double dotProd(int[] vector, Complex[] rightSide){
 		return vector[0]*rightSide[0].getRe() + vector[1]*rightSide[1].getRe();
 	}
 	

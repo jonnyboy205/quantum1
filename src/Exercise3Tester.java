@@ -15,7 +15,7 @@ public class Exercise3Tester {
 		
 		int m = -Integer.MIN_VALUE;
 		if (args[2] != null)
-			k = Integer.parseInt(args[2]);
+			m = Integer.parseInt(args[2]);
 		
 		Exercise3 e = new Exercise3(j,k,m);
 		System.out.println("The probability to measure j=2 in a k=2 qubit system " +
