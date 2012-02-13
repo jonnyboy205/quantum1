@@ -14,6 +14,8 @@ public class Exercise3 {
 	public int calculateProb(){
 		int ret = 0;
 		
+		
+		
 		return ret;
 	}
 	
