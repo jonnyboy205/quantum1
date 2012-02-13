@@ -13,12 +13,13 @@ public class Exercise3 {
 	}
 	
 	public double calculateProb(){
-		double ret = 0;
+		double ret = 1;
 		
 		ArrayList<int[]> leftSide = doLeft();
 		ArrayList<Gate> middle = doMiddle();
 //		ArrayList<int[]> rightSide = doRight();
 		String rightSideString = Integer.toBinaryString(m);
+		rightSideString = fixLengthOfBinary(rightSideString);
 		
 		ArrayList<Complex[]> middleRight = new ArrayList<Complex[]>();
 		for (int i=0; i<k; i++){
@@ -55,7 +56,7 @@ public class Exercise3 {
 	private ArrayList<Gate> doMiddle() {
 		//create middle of prob expression
 		ArrayList<Gate> middle = new ArrayList<Gate>(k);
-		for (int x=0; x<k; x++){
+		for (int x=1; x<=k; x++){
 			middle.add(new Gate(x));
 		}
 		
@@ -65,6 +66,7 @@ public class Exercise3 {
 	private ArrayList<int[]> doLeft() {
 		//first make j into binary
 		String leftSideString = Integer.toBinaryString(j);
+		leftSideString = fixLengthOfBinary(leftSideString);
 		
 		//create leftside of prob expression
 		ArrayList<int[]> leftside = new ArrayList<int[]>(k);
@@ -80,6 +82,24 @@ public class Exercise3 {
 		}
 		
 		return leftside;
+	}
+	
+	private String fixLengthOfBinary(String binaryStr){
+		String ret = "";
+		
+		if (binaryStr.length()!=k){
+			//binaryStr.length should be < k if reaches here.
+			int diff = k-binaryStr.length();
+			for (int i=0; i<diff; i++){
+				ret=ret.concat("0");
+			}
+			ret = ret.concat(binaryStr);
+		}
+		else{
+			ret = binaryStr;
+		}
+		
+		return ret;
 	}
 	
 }

@@ -6,13 +6,22 @@ public class Gate {
 	
 	public Gate(int l){
 		
+		column0 = new Complex[2];
+		column1 = new Complex[2];
+		
 		switch(l%6){
+			case 0: setEntriesAsT();
+					break;
 			case 1: setEntriesAsX();
+					break;
 			case 2: setEntriesAsY();
+					break;
 			case 3: setEntriesAsZ();
+					break;
 			case 4: setEntriesAsH();
+					break;
 			case 5: setEntriesAsS();
-			case 6: setEntriesAsT();
+					break;
 		}
 	}
 
