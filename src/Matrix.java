@@ -18,10 +18,10 @@ public class Matrix {
 		switch(l%6){
 			case 1: setEntriesAsX();
 			case 2: setEntriesAsY();
-			case 3: setEntriesAsZ();
-			case 4: setEntriesAsH();
-			case 5: setEntriesAsS();
-			case 6: setEntriesAsT();
+//			case 3: setEntriesAsZ();
+//			case 4: setEntriesAsH();
+//			case 5: setEntriesAsS();
+//			case 6: setEntriesAsT();
 		}
 	}
 
@@ -52,7 +52,7 @@ public class Matrix {
 	
 	private void setEntriesAsY() {
 		entries[0][0] = 0;
-		entries[1][0] = 
+//		entries[1][0] = 
 	}
 
 }

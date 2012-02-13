@@ -11,5 +11,10 @@ public class Exercise3 {
 		this.m = m;
 	}
 	
+	public int calculateProb(){
+		int ret = 0;
+		
+		return ret;
+	}
 	
 }
